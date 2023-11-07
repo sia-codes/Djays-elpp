@@ -4,6 +4,6 @@ Members:
 Aditi Prasath
 Dean Prach
 Jason Lobo
-Sia Sheguri
 Yuvraj Bhatia 
+
 
