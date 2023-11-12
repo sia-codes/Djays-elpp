@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Accordion?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.SeparatorMenuItem?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.HelpPage">
+  <children>
+    <MenuBar VBox.vgrow="NEVER">
+      <menus>
+        <Menu mnemonicParsing="false" text="File">
+          <items>
+            <MenuItem mnemonicParsing="false" text="New" />
+            <MenuItem mnemonicParsing="false" text="Open…" />
+            <Menu mnemonicParsing="false" text="Open Recent" />
+            <SeparatorMenuItem mnemonicParsing="false" />
+            <MenuItem mnemonicParsing="false" text="Close" />
+            <MenuItem mnemonicParsing="false" text="Save" />
+            <MenuItem mnemonicParsing="false" text="Save As…" />
+            <MenuItem mnemonicParsing="false" text="Revert" />
+            <SeparatorMenuItem mnemonicParsing="false" />
+            <MenuItem mnemonicParsing="false" text="Preferences…" />
+            <SeparatorMenuItem mnemonicParsing="false" />
+            <MenuItem mnemonicParsing="false" text="Quit" />
+          </items>
+        </Menu>
+        <Menu mnemonicParsing="false" text="Edit">
+          <items>
+            <MenuItem mnemonicParsing="false" text="Undo" />
+            <MenuItem mnemonicParsing="false" text="Redo" />
+            <SeparatorMenuItem mnemonicParsing="false" />
+            <MenuItem mnemonicParsing="false" text="Cut" />
+            <MenuItem mnemonicParsing="false" text="Copy" />
+            <MenuItem mnemonicParsing="false" text="Paste" />
+            <MenuItem mnemonicParsing="false" text="Delete" />
+            <SeparatorMenuItem mnemonicParsing="false" />
+            <MenuItem mnemonicParsing="false" text="Select All" />
+            <MenuItem mnemonicParsing="false" text="Unselect All" />
+          </items>
+        </Menu>
+        <Menu mnemonicParsing="false" text="Help">
+          <items>
+            <MenuItem mnemonicParsing="false" text="About MyHelloApp" />
+          </items>
+        </Menu>
+      </menus>
+    </MenuBar>
+    <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
+      <children>
+            <VBox prefHeight="375.0" prefWidth="96.0">
+               <children>
+                  <Label fx:id="welcomeLabel" alignment="TOP_LEFT" contentDisplay="CENTER" prefHeight="1.0" prefWidth="64.0" text="Welcome," />
+                  <Label fx:id="userLabel" text="User" />
+                  <Button fx:id="effortConsoleButton" mnemonicParsing="false" onAction="#toEffortConsole" prefHeight="25.0" prefWidth="114.0" text="EffortConsole" />
+                  <Button fx:id="debugConsoleButton" mnemonicParsing="false" onAction="#toDefectConsole" prefHeight="25.0" prefWidth="106.0" text="DefectConsole" />
+                  <Button fx:id="effortEditorButton" mnemonicParsing="false" prefHeight="25.0" prefWidth="103.0" text="EffortEditor" />
+                  <Button fx:id="planningPokerButton" mnemonicParsing="false" prefHeight="25.0" prefWidth="106.0" text="PlanningPoker" />
+                  <Button fx:id="viewLogsButton" mnemonicParsing="false" prefHeight="25.0" prefWidth="113.0" text="ViewLogs" />
+                  <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="113.0" text="Help" />
+               </children>
+            </VBox>
+            <Label fx:id="effortTestLabel" layoutX="117.0" layoutY="14.0" text="elpp Help">
+               <font>
+                  <Font size="18.0" />
+               </font></Label>
+            <Accordion layoutX="117.0" layoutY="50.0">
+              <panes>
+                <TitledPane animated="false" prefHeight="239.0" prefWidth="479.0" text="How to login to elpp application?">
+                  <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <TextArea layoutX="14.0" layoutY="8.0" prefHeight="107.0" prefWidth="455.0" text="1. Click on the elpp app icon and you will be greeted by a Login / Sign Up page&#10;2. If you are a new user, enter your unique username and password and click on&#10;    Signup. You will get a message saying your account has been created&#10;3. If you are a returing user, enter your username and password and click on Login&#10;    to login into the application&#10;" />
+                           </children>
+                        </AnchorPane>
+                  </content>
+                </TitledPane>
+                <TitledPane animated="false" prefHeight="252.0" prefWidth="479.0" text="How to use Effort Console?">
+                  <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="112.0" prefWidth="477.0">
+                           <children>
+                              <TextArea layoutX="8.0" layoutY="7.0" prefHeight="156.0" prefWidth="461.0" text="1. If you want to track time, select the Project Name, Lifecycle Steps and other options&#10;2. Click on Start amd the clock banner should turn green, which means your effort is &#10;    being tracked&#10;3. Click on Stop to stop tracking your effort, the clock banner will turn back to Red." />
+                           </children>
+                        </AnchorPane>
+                  </content>
+                </TitledPane>
+                <TitledPane animated="false" prefHeight="267.0" prefWidth="479.0" text="How to create a Planning Poker Session?">
+                  <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="65.0" prefWidth="477.0">
+                           <children>
+                              <TextArea layoutX="14.0" layoutY="14.0" prefHeight="218.0" prefWidth="455.0" text="1. Click on the Planning Poker button on the sidebar to navigate to the Planning &#10;    Poker session screen&#10;2. If you want to create a new session:&#10;    - Enter a unique session name&#10;    - Enter a 5 digit numeric PIN&#10;    - Click on the Create button&#10;     Your session will be created successfully&#10;3. If you want to join an existing session:&#10;     - Enter the name of the session you want to join&#10;     - Enter the session PIN&#10;     - Click on the Join button&#10;    You can successfully then join the session&#10;" />
+                           </children>
+                        </AnchorPane>
+                  </content>
+                </TitledPane>
+              </panes>
+            </Accordion>
+      </children>
+    </AnchorPane>
+  </children>
+</VBox>

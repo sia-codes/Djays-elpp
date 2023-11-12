@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.DisplayViewController">
+  <children>
+    <AnchorPane maxHeight="400.0" maxWidth="600.0" prefHeight="400.0" prefWidth="600.0" VBox.vgrow="ALWAYS">
+      <children>
+            <VBox prefHeight="400.0" prefWidth="96.0" style="-fx-background-color: gray;">
+               <children>
+                  <Label fx:id="welcomeLabel" alignment="TOP_LEFT" contentDisplay="CENTER" prefHeight="17.0" prefWidth="64.0" text="Welcome," />
+                  <Label fx:id="userLabel" text="User" />
+                  <Button fx:id="effortConsoleButton" mnemonicParsing="false" onAction="#toEffortConsole" prefHeight="25.0" prefWidth="114.0" text="EffortConsole" />
+                  <Button fx:id="effortLogEditorButton" mnemonicParsing="false" onAction="#toEffortLogEditor" prefHeight="25.0" prefWidth="113.0" text="EffortLogEditor" />
+                  <Button fx:id="defectConsoleButton" mnemonicParsing="false" onAction="#toDefectConsole" prefHeight="25.0" prefWidth="106.0" text="DefectConsole" />
+                  <Button fx:id="planningPokerButton" mnemonicParsing="false" onAction="#toPlanningPokerLogin" prefHeight="25.0" prefWidth="106.0" text="PlanningPoker" />
+                  <Button fx:id="viewLogsButton" mnemonicParsing="false" onAction="#toViewLogs" prefHeight="25.0" prefWidth="113.0" text="ViewLogs" />
+                  <Button fx:id="definitionsButton" mnemonicParsing="false" onAction="#toDefinitions" prefHeight="25.0" prefWidth="113.0" text="Definitions" />
+                  <Button fx:id="helpButton" mnemonicParsing="false" onAction="#toHelp" prefHeight="25.0" prefWidth="113.0" text="Help" />
+               </children>
+            </VBox>
+            <Pane fx:id="clockPane" layoutX="96.0" prefHeight="34.0" prefWidth="545.0" style="-fx-background-color: red;">
+               <children>
+                  <Label fx:id="clockLabel" layoutX="172.0" layoutY="3.0" text="Clock Is Stopped" textFill="WHITE">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <Button fx:id="startActivityButton" layoutX="232.0" layoutY="98.0" mnemonicParsing="false" onAction="#startClock" text="Start an Activity" />
+            <Label layoutX="198.0" layoutY="144.0" text="Projects" />
+            <ComboBox fx:id="projectDropDown" layoutX="148.0" layoutY="188.0" prefHeight="25.0" prefWidth="150.0" />
+            <ComboBox fx:id="lifeCycleDropDown" layoutX="400.0" layoutY="188.0" prefWidth="150.0" />
+            <Label layoutX="428.0" layoutY="144.0" text="Life Cycle Steps" />
+            <Label layoutX="273.0" layoutY="57.0" text="EffortLog Console">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Button fx:id="stopActivityButton" layoutX="369.0" layoutY="98.0" mnemonicParsing="false" onAction="#createLog" text="Stop an Activity" />
+            <Label layoutX="175.0" layoutY="234.0" text="Effort Categories" />
+            <ComboBox fx:id="categoryDropDown" layoutX="147.0" layoutY="280.0" prefHeight="25.0" prefWidth="150.0" />
+            <ComboBox fx:id="planDropDown" layoutX="405.0" layoutY="280.0" prefHeight="25.0" prefWidth="150.0" />
+            <Label layoutX="454.0" layoutY="234.0" text="Plans" />
+            <Button fx:id="addProjectButton" layoutX="253.0" layoutY="161.0" mnemonicParsing="false" onAction="#addProject" prefHeight="17.0" prefWidth="40.0" text="Add" />
+            <Button fx:id="addCycleButton" layoutX="510.0" layoutY="161.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="40.0" text="Add" />
+            <Button fx:id="addCategoryButton" layoutX="253.0" layoutY="251.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="40.0" text="Add" />
+            <Button fx:id="addPlanButton" layoutX="512.0" layoutY="251.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="40.0" text="Add" />
+            <Label fx:id="invalidLog" layoutX="272.0" layoutY="338.0" textFill="#fd0909">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <TextField fx:id="projectField" layoutX="148.0" layoutY="161.0" prefHeight="25.0" prefWidth="100.0" />
+            <TextField fx:id="lifeCycleField" layoutX="400.0" layoutY="161.0" onAction="#addLifeCycle" prefHeight="25.0" prefWidth="107.0" />
+            <TextField fx:id="categoryField" layoutX="148.0" layoutY="251.0" onAction="#addCategory" prefHeight="25.0" prefWidth="100.0" />
+            <TextField fx:id="planField" layoutX="404.0" layoutY="251.0" onAction="#addPlan" prefHeight="25.0" prefWidth="107.0" />
+            <Button layoutX="555.0" layoutY="343.0" mnemonicParsing="false" onAction="#logOut" text="Log Out" />
+      </children>
+    </AnchorPane>
+  </children>
+</VBox>
