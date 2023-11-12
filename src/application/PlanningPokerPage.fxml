@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.SeparatorMenuItem?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.PlanningPokerPageViewController">
+  <children>
+    <MenuBar VBox.vgrow="NEVER">
+      <menus>
+        <Menu mnemonicParsing="false" text="File">
+          <items>
+            <MenuItem mnemonicParsing="false" text="New" />
+            <MenuItem mnemonicParsing="false" text="Open…" />
+            <Menu mnemonicParsing="false" text="Open Recent" />
+            <SeparatorMenuItem mnemonicParsing="false" />
+            <MenuItem mnemonicParsing="false" text="Close" />
+            <MenuItem mnemonicParsing="false" text="Save" />
+            <MenuItem mnemonicParsing="false" text="Save As…" />
+            <MenuItem mnemonicParsing="false" text="Revert" />
+            <SeparatorMenuItem mnemonicParsing="false" />
+            <MenuItem mnemonicParsing="false" text="Preferences…" />
+            <SeparatorMenuItem mnemonicParsing="false" />
+            <MenuItem mnemonicParsing="false" text="Quit" />
+          </items>
+        </Menu>
+        <Menu mnemonicParsing="false" text="Edit">
+          <items>
+            <MenuItem mnemonicParsing="false" text="Undo" />
+            <MenuItem mnemonicParsing="false" text="Redo" />
+            <SeparatorMenuItem mnemonicParsing="false" />
+            <MenuItem mnemonicParsing="false" text="Cut" />
+            <MenuItem mnemonicParsing="false" text="Copy" />
+            <MenuItem mnemonicParsing="false" text="Paste" />
+            <MenuItem mnemonicParsing="false" text="Delete" />
+            <SeparatorMenuItem mnemonicParsing="false" />
+            <MenuItem mnemonicParsing="false" text="Select All" />
+            <MenuItem mnemonicParsing="false" text="Unselect All" />
+          </items>
+        </Menu>
+        <Menu mnemonicParsing="false" text="Help">
+          <items>
+            <MenuItem mnemonicParsing="false" text="About MyHelloApp" />
+          </items>
+        </Menu>
+      </menus>
+    </MenuBar>
+    <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefWidth="640.0" VBox.vgrow="ALWAYS">
+      <children>
+            <VBox prefHeight="375.0" prefWidth="96.0">
+               <children>
+                  <Label fx:id="welcomeLabel" alignment="TOP_LEFT" contentDisplay="CENTER" prefHeight="17.0" prefWidth="64.0" text="Welcome," />
+                  <Label fx:id="userLabel" text="User" />
+                  <Button fx:id="effortConsoleButton" mnemonicParsing="false" onAction="#toEffortConsole" prefHeight="25.0" prefWidth="114.0" text="EffortConsole" />
+                  <Button fx:id="debugConsoleButton" mnemonicParsing="false" onAction="#toDefectConsole" prefHeight="25.0" prefWidth="106.0" text="DefectConsole" />
+                  <Button fx:id="effortEditorButton" mnemonicParsing="false" prefHeight="25.0" prefWidth="103.0" text="EffortEditor" />
+                  <Button fx:id="planningPokerButton" mnemonicParsing="false" prefHeight="25.0" prefWidth="106.0" text="PlanningPoker" />
+                  <Button fx:id="viewLogsButton" mnemonicParsing="false" prefHeight="25.0" prefWidth="113.0" text="ViewLogs" />
+               </children>
+            </VBox>
+            <Label layoutX="122.0" layoutY="123.0" text="Planning Poker">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font></Label>
+            <TextArea layoutX="123.0" layoutY="54.0" prefHeight="54.0" prefWidth="494.0" />
+            <Label layoutX="123.0" layoutY="35.0" text="Add User Stories (comma seperated)" />
+            <Button layoutX="121.0" layoutY="147.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="86.0" text="Start Voting">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font></Button>
+            <Label layoutX="123.0" layoutY="14.0" text="User Stories">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <TextArea layoutX="123.0" layoutY="188.0" prefHeight="108.0" prefWidth="86.0" text="Player 1  ⏳&#10;Player 2  ⏳&#10;Player 3  ⏳" />
+            <Button layoutX="112.0" layoutY="312.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="104.0" text="Next User Story" />
+            <Label layoutX="370.0" layoutY="123.0" text="User Story 1" underline="true" />
+            <Button layoutX="244.0" layoutY="153.0" mnemonicParsing="false" prefHeight="51.0" prefWidth="51.0" text="0">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Button>
+            <Button layoutX="304.0" layoutY="153.0" mnemonicParsing="false" prefHeight="51.0" prefWidth="51.0" text="1/2">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Button>
+            <Button layoutX="365.0" layoutY="153.0" mnemonicParsing="false" prefHeight="51.0" prefWidth="51.0" text="1">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Button>
+            <Button layoutX="425.0" layoutY="153.0" mnemonicParsing="false" prefHeight="51.0" prefWidth="51.0" text="2">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Button>
+            <Button layoutX="484.0" layoutY="153.0" mnemonicParsing="false" prefHeight="51.0" prefWidth="51.0" text="3">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Button>
+            <Button layoutX="246.0" layoutY="216.0" mnemonicParsing="false" prefHeight="51.0" prefWidth="51.0" text="5">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Button>
+            <Button layoutX="306.0" layoutY="216.0" mnemonicParsing="false" prefHeight="51.0" prefWidth="51.0" text="8">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Button>
+            <Button layoutX="367.0" layoutY="216.0" mnemonicParsing="false" prefHeight="51.0" prefWidth="51.0" text="13">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Button>
+            <Button layoutX="427.0" layoutY="216.0" mnemonicParsing="false" prefHeight="51.0" prefWidth="51.0" text="20">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Button>
+            <Button layoutX="486.0" layoutY="216.0" mnemonicParsing="false" prefHeight="51.0" prefWidth="51.0" text="40">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Button>
+            <Button layoutX="247.0" layoutY="278.0" mnemonicParsing="false" prefHeight="51.0" prefWidth="51.0" text="100">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Button>
+            <Button layoutX="308.0" layoutY="278.0" mnemonicParsing="false" prefHeight="51.0" prefWidth="51.0" text="?">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Button>
+            <Button layoutX="368.0" layoutY="278.0" mnemonicParsing="false" prefHeight="51.0" prefWidth="51.0" text="☕">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Button>
+      </children>
+    </AnchorPane>
+  </children>
+</VBox>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.control.Label?>
+
+<AnchorPane xmlns:fx="http://javafx.com/fxml" fx:controller="application.DisplayViewController">
+	<!-- TODO Add Nodes -->
+	<children>
+      <Label fx:id="username" layoutX="272.0" layoutY="110.0" text="Username" />
+      <Label fx:id="password" layoutX="272.0" layoutY="165.0" text="PasswordLength" />
+      <Label fx:id="passwordLength" layoutX="272.0" layoutY="209.0" text="PasswordLength" />
+   </children>
+</AnchorPane>
+
