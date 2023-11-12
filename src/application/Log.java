@@ -75,4 +75,26 @@ public class Log implements Serializable{
 	public String toString() {
 		return "Start time: " + this.startTime + " End time: " + this.endTime + " Project: " + this.projectName + " LifeCycle: " + this.lifeCycleStep + " EffortCategory: " + this.effortCategory + " Plan: " + this.planType; 
 	}
+	
+
+	public void setDate(String text) {
+		// TODO Auto-generated method stub
+		
+	}
+	public void setStopTime(String text) {
+		// TODO Auto-generated method stub
+		
+	}
+	public void setStartTime(String text) {
+		// TODO Auto-generated method stub
+		
+	}
+	public void setDetails(String text) {
+		// TODO Auto-generated method stub
+		
+	}
+	public String getDate() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }

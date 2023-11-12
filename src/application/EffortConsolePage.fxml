@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="application.DisplayViewController">
+<VBox prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.DisplayViewController">
   <children>
     <AnchorPane maxHeight="400.0" maxWidth="600.0" prefHeight="400.0" prefWidth="600.0" VBox.vgrow="ALWAYS">
       <children>
@@ -18,10 +18,12 @@
                   <Label fx:id="welcomeLabel" alignment="TOP_LEFT" contentDisplay="CENTER" prefHeight="17.0" prefWidth="64.0" text="Welcome," />
                   <Label fx:id="userLabel" text="User" />
                   <Button fx:id="effortConsoleButton" mnemonicParsing="false" onAction="#toEffortConsole" prefHeight="25.0" prefWidth="114.0" text="EffortConsole" />
+                  <Button fx:id="effortLogEditorButton" mnemonicParsing="false" onAction="#toEffortLogEditor" prefHeight="25.0" prefWidth="113.0" text="EffortLogEditor" />
                   <Button fx:id="defectConsoleButton" mnemonicParsing="false" onAction="#toDefectConsole" prefHeight="25.0" prefWidth="106.0" text="DefectConsole" />
-                  <Button fx:id="planningPokerButton" mnemonicParsing="false" prefHeight="25.0" prefWidth="106.0" text="PlanningPoker" />
+                  <Button fx:id="planningPokerButton" mnemonicParsing="false" onAction="#toPlanningPokerLogin" prefHeight="25.0" prefWidth="106.0" text="PlanningPoker" />
                   <Button fx:id="viewLogsButton" mnemonicParsing="false" onAction="#toViewLogs" prefHeight="25.0" prefWidth="113.0" text="ViewLogs" />
-                  <Button mnemonicParsing="false" onAction="#logOut" text="Log Out" translateX="20.0" translateY="240.0" />
+                  <Button fx:id="definitionsButton" mnemonicParsing="false" onAction="#toDefinitions" prefHeight="25.0" prefWidth="113.0" text="Definitions" />
+                  <Button fx:id="helpButton" mnemonicParsing="false" onAction="#toHelp" prefHeight="25.0" prefWidth="113.0" text="Help" />
                </children>
             </VBox>
             <Pane fx:id="clockPane" layoutX="96.0" prefHeight="34.0" prefWidth="545.0" style="-fx-background-color: red;">
@@ -61,6 +63,7 @@
             <TextField fx:id="lifeCycleField" layoutX="400.0" layoutY="161.0" onAction="#addLifeCycle" prefHeight="25.0" prefWidth="107.0" />
             <TextField fx:id="categoryField" layoutX="148.0" layoutY="251.0" onAction="#addCategory" prefHeight="25.0" prefWidth="100.0" />
             <TextField fx:id="planField" layoutX="404.0" layoutY="251.0" onAction="#addPlan" prefHeight="25.0" prefWidth="107.0" />
+            <Button layoutX="555.0" layoutY="343.0" mnemonicParsing="false" onAction="#logOut" text="Log Out" />
       </children>
     </AnchorPane>
   </children>

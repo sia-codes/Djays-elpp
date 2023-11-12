@@ -72,6 +72,83 @@ public class Controller {
 		
 	}
 	
+	public void toHelp(ActionEvent event) throws IOException
+	{
+		FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("HelpPage.fxml"));
+		//login.setName(usernameField.getText());
+		//login.setPassword(passwordField.getText());
+		
+		stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+		scene = new Scene(fxmlLoader.load(), 600, 400);
+		stage.setTitle("Planning Poker");
+		
+		//DisplayViewController control = fxmlLoader.getController();
+		//control.setLogin(login);
+		stage.setScene(scene);
+		stage.show();	
+	}
+	
+	public void toPlanningPokerLogin(ActionEvent event) throws IOException
+	{
+		FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("PlanningPokerLoginPage.fxml"));
+		//login.setName(usernameField.getText());
+		//login.setPassword(passwordField.getText());
+		
+		stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+		scene = new Scene(fxmlLoader.load(), 600, 400);
+		stage.setTitle("Planning Poker");
+		
+		//DisplayViewController control = fxmlLoader.getController();
+		//control.setLogin(login);
+		stage.setScene(scene);
+		stage.show();	
+	}
+	
+	public void toPlanningPoker(ActionEvent event) throws IOException
+	{
+		FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("PlanningPokerPage.fxml"));
+		//login.setName(usernameField.getText());
+		//login.setPassword(passwordField.getText());
+		
+		stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+		scene = new Scene(fxmlLoader.load(), 600, 400);
+		stage.setTitle("Planning Poker");
+		
+		//DisplayViewController control = fxmlLoader.getController();
+		//control.setLogin(login);
+		stage.setScene(scene);
+		stage.show();	
+	}
+	
+	//function to switch to Definitions screen
+	public void toDefinitions(ActionEvent event) throws IOException
+	{
+		FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("DefinitionsPage.fxml"));
+		
+		stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+		scene = new Scene(fxmlLoader.load(), 600, 400);
+		stage.setTitle("Definitions");
+		stage.setScene(scene);
+		stage.show();
+		
+		
+	}
+	
+	//function to switch to EffortLogEditor screen
+	public void toEffortLogEditor(ActionEvent event) throws IOException
+		{
+			FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("EffortLogEditor.fxml"));
+			
+			stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+			scene = new Scene(fxmlLoader.load(), 600, 400);
+			stage.setTitle("EffortLog Editor");
+			
+			stage.setScene(scene);
+			stage.show();
+			
+			
+		}
+	
 	//function to log out as the current user and return to the log in screen
 	public void logOut(ActionEvent event)throws IOException {
 		FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("LoginPage.fxml"));
