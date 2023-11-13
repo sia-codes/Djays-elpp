@@ -60,12 +60,13 @@
                <children>
                   <Label fx:id="welcomeLabel" alignment="TOP_LEFT" contentDisplay="CENTER" prefHeight="1.0" prefWidth="64.0" text="Welcome," />
                   <Label fx:id="userLabel" text="User" />
+                  <Button fx:id="planningPokerButton" mnemonicParsing="false" onAction="#toPlanningPokerLogin" prefHeight="25.0" prefWidth="106.0" text="PlanningPoker" />
                   <Button fx:id="effortConsoleButton" mnemonicParsing="false" onAction="#toEffortConsole" prefHeight="25.0" prefWidth="114.0" text="EffortConsole" />
                   <Button fx:id="debugConsoleButton" mnemonicParsing="false" onAction="#toDefectConsole" prefHeight="25.0" prefWidth="106.0" text="DefectConsole" />
-                  <Button fx:id="effortEditorButton" mnemonicParsing="false" prefHeight="25.0" prefWidth="103.0" text="EffortEditor" />
-                  <Button fx:id="planningPokerButton" mnemonicParsing="false" prefHeight="25.0" prefWidth="106.0" text="PlanningPoker" />
-                  <Button fx:id="viewLogsButton" mnemonicParsing="false" prefHeight="25.0" prefWidth="113.0" text="ViewLogs" />
-                  <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="113.0" text="Help" />
+                  <Button fx:id="definitionsButton" mnemonicParsing="false" onAction="#toDefinitions" prefHeight="25.0" prefWidth="114.0" text="Definitions" />
+                  <Button fx:id="effortEditorButton" mnemonicParsing="false" onAction="#toEffortLogEditor" prefHeight="25.0" prefWidth="103.0" text="EffortEditor" />
+                  <Button fx:id="viewLogsButton" mnemonicParsing="false" onAction="#toViewLogs" prefHeight="25.0" prefWidth="113.0" text="ViewLogs" />
+                  <Button fx:id="helpButton" mnemonicParsing="false" onAction="#toHelp" prefHeight="25.0" prefWidth="113.0" text="Help" />
                </children>
             </VBox>
             <Label fx:id="effortTestLabel" layoutX="117.0" layoutY="14.0" text="elpp Help">

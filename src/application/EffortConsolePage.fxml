@@ -17,12 +17,12 @@
                <children>
                   <Label fx:id="welcomeLabel" alignment="TOP_LEFT" contentDisplay="CENTER" prefHeight="17.0" prefWidth="64.0" text="Welcome," />
                   <Label fx:id="userLabel" text="User" />
-                  <Button fx:id="effortConsoleButton" mnemonicParsing="false" onAction="#toEffortConsole" prefHeight="25.0" prefWidth="114.0" text="EffortConsole" />
-                  <Button fx:id="effortLogEditorButton" mnemonicParsing="false" onAction="#toEffortLogEditor" prefHeight="25.0" prefWidth="113.0" text="EffortLogEditor" />
-                  <Button fx:id="defectConsoleButton" mnemonicParsing="false" onAction="#toDefectConsole" prefHeight="25.0" prefWidth="106.0" text="DefectConsole" />
                   <Button fx:id="planningPokerButton" mnemonicParsing="false" onAction="#toPlanningPokerLogin" prefHeight="25.0" prefWidth="106.0" text="PlanningPoker" />
-                  <Button fx:id="viewLogsButton" mnemonicParsing="false" onAction="#toViewLogs" prefHeight="25.0" prefWidth="113.0" text="ViewLogs" />
+                  <Button fx:id="effortConsoleButton" mnemonicParsing="false" onAction="#toEffortConsole" prefHeight="25.0" prefWidth="114.0" text="EffortConsole" />
+                  <Button fx:id="defectConsoleButton" mnemonicParsing="false" onAction="#toDefectConsole" prefHeight="25.0" prefWidth="106.0" text="DefectConsole" />
                   <Button fx:id="definitionsButton" mnemonicParsing="false" onAction="#toDefinitions" prefHeight="25.0" prefWidth="113.0" text="Definitions" />
+                  <Button fx:id="effortLogEditorButton" mnemonicParsing="false" onAction="#toEffortLogEditor" prefHeight="25.0" prefWidth="113.0" text="EffortLogEditor" />
+                  <Button fx:id="viewLogsButton" mnemonicParsing="false" onAction="#toViewLogs" prefHeight="25.0" prefWidth="113.0" text="ViewLogs" />
                   <Button fx:id="helpButton" mnemonicParsing="false" onAction="#toHelp" prefHeight="25.0" prefWidth="113.0" text="Help" />
                </children>
             </VBox>
@@ -63,7 +63,7 @@
             <TextField fx:id="lifeCycleField" layoutX="400.0" layoutY="161.0" onAction="#addLifeCycle" prefHeight="25.0" prefWidth="107.0" />
             <TextField fx:id="categoryField" layoutX="148.0" layoutY="251.0" onAction="#addCategory" prefHeight="25.0" prefWidth="100.0" />
             <TextField fx:id="planField" layoutX="404.0" layoutY="251.0" onAction="#addPlan" prefHeight="25.0" prefWidth="107.0" />
-            <Button layoutX="555.0" layoutY="343.0" mnemonicParsing="false" onAction="#logOut" text="Log Out" />
+            <Button layoutX="503.0" layoutY="356.0" mnemonicParsing="false" onAction="#logOut" text="Log Out" />
       </children>
     </AnchorPane>
   </children>
