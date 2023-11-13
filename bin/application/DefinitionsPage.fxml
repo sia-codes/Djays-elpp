@@ -16,53 +16,81 @@
                <children>
                   <Label fx:id="welcomeLabel" alignment="TOP_LEFT" contentDisplay="CENTER" prefHeight="17.0" prefWidth="64.0" text="Welcome," />
                   <Label fx:id="userLabel" text="User" />
+                  <Button fx:id="planningPokerButton" mnemonicParsing="false" onAction="#toPlanningPokerLogin" prefHeight="25.0" prefWidth="106.0" text="PlanningPoker" />
                   <Button fx:id="effortConsoleButton" mnemonicParsing="false" onAction="#toEffortConsole" prefHeight="25.0" prefWidth="114.0" text="EffortConsole" />
-                  <Button fx:id="defectConsoleButton" mnemonicParsing="false" prefHeight="25.0" prefWidth="106.0" text="DefectConsole" />
-                  <Button fx:id="planningPokerButton" mnemonicParsing="false" prefHeight="25.0" prefWidth="106.0" text="PlanningPoker" />
-                  <Button fx:id="viewLogsButton" mnemonicParsing="false" prefHeight="25.0" prefWidth="113.0" text="ViewLogs" />
-                  <Button fx:id="definitionsButton" mnemonicParsing="false" prefHeight="25.0" prefWidth="113.0" text="Definitions" />
+                  <Button fx:id="defectConsoleButton" mnemonicParsing="false" onAction="#toDefectConsole" prefHeight="25.0" prefWidth="106.0" text="DefectConsole" />
+                  <Button fx:id="definitionsButton" mnemonicParsing="false" onAction="#toDefinitions" prefHeight="25.0" prefWidth="113.0" text="Definitions" />
+                  <Button fx:id="effortLogEditorButton" mnemonicParsing="false" onAction="#toEffortLogEditor" prefHeight="25.0" prefWidth="106.0" text="EffortLogEditor" />
+                  <Button fx:id="viewLogsButton" mnemonicParsing="false" onAction="#toViewLogs" prefHeight="25.0" prefWidth="113.0" text="ViewLogs" />
+                  <Button fx:id="helpButon" mnemonicParsing="false" onAction="#toHelp" prefHeight="25.0" prefWidth="113.0" text="Help" />
                </children>
             </VBox>
-            <Label layoutX="300.0" layoutY="7.0" text="Definitions">
+            <Label layoutX="299.0" layoutY="14.0" text="Definitions">
                <font>
-                  <Font size="18.0" />
+                  <Font name="System Bold" size="18.0" />
                </font>
             </Label>
-            
-            <Label layoutX="195.0" layoutY="35.0" text="Projects" />
-            <TextField fx:id="projectField" layoutX="146.0" layoutY="52.0" prefHeight="25.0" prefWidth="100.0" />
-            <Button fx:id="addProjectButton" layoutX="252.0" layoutY="52.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="40.0" text="Add" />
-            <ComboBox fx:id="projectDropDown" layoutX="146.0" layoutY="82.0" prefHeight="25.0" prefWidth="150.0" />
-            
-            <Label layoutX="416.0" layoutY="35.0" text="Life Cycle Steps" />
-            <TextField fx:id="lifeCycleField" layoutX="385.0" layoutY="53.0" prefHeight="25.0" prefWidth="107.0" />
-            <Button fx:id="addLifecycleButton" layoutX="492.0" layoutY="54.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="40.0" text="Add" />
-            <ComboBox fx:id="lifeCycleDropDown" layoutX="385.0" layoutY="82.0" prefWidth="150.0" />
-            
-            <Label layoutX="161.0" layoutY="117.0" text="Effort Categories" />
-            <TextField fx:id="effortCategoryField" layoutX="146.0" layoutY="135.0" prefHeight="25.0" prefWidth="100.0" />
-            <Button fx:id="addEffortCategoryButton" layoutX="251.0" layoutY="135.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="40.0" text="Add" />
-            <ComboBox fx:id="effortCategoryDropDown" layoutX="145.0" layoutY="164.0" prefHeight="25.0" prefWidth="150.0" />
-            
-            <Label layoutX="431.0" layoutY="117.0" text="Plans" />
-            <TextField fx:id="planField" layoutX="385.0" layoutY="138.0" prefHeight="25.0" prefWidth="107.0" />
-            <Button fx:id="addPlanButton" layoutX="494.0" layoutY="138.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="40.0" text="Add" />
-            <ComboBox fx:id="planDropDown" layoutX="386.0" layoutY="167.0" prefHeight="25.0" prefWidth="150.0" />
-            
-            <Label layoutX="161.0" layoutY="203.0" text="Deliverables" />
-            <TextField fx:id="deliverablesField" layoutX="146.0" layoutY="220.0" prefHeight="25.0" prefWidth="100.0" />
-            <Button fx:id="addDeliverablesButton" layoutX="252.0" layoutY="220.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="40.0" text="Add" />
-            <ComboBox fx:id="deliverablesDropDown" layoutX="147.0" layoutY="249.0" prefHeight="25.0" prefWidth="150.0" />
-            
-            <Label layoutX="427.0" layoutY="202.0" text="Interruptions" />
-            <TextField fx:id="interruptionsFiled" layoutX="389.0" layoutY="218.0" prefHeight="25.0" prefWidth="100.0" />
-            <Button fx:id="addInterruptionsButton" layoutX="492.0" layoutY="218.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="40.0" text="Add" />
-            <ComboBox fx:id="interruptionsDropDown" layoutX="387.0" layoutY="247.0" prefHeight="25.0" prefWidth="150.0" />
-            
-            <Label layoutX="283.0" layoutY="289.0" text="Defect Categories" />
-            <TextField fx:id="defectCategoryField" layoutX="270.0" layoutY="306.0" prefHeight="25.0" prefWidth="100.0" />
-            <Button fx:id="addDefectCategoryButton" layoutX="375.0" layoutY="306.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="40.0" text="Add" />
-            <ComboBox fx:id="defectCategoryDropDown" layoutX="269.0" layoutY="335.0" prefHeight="25.0" prefWidth="150.0" />
+			<AnchorPane layoutX="116.0" layoutY="67.0">
+               <children>
+                  <Label layoutX="2.0" text="Projects" />
+                  <TextField fx:id="projectField" layoutX="2.0" layoutY="50.0" prefHeight="25.0" prefWidth="100.0" />
+                  <Button fx:id="addProjectButton" layoutX="108.0" layoutY="50.0" mnemonicParsing="false" onAction="#addProject" prefHeight="17.0" prefWidth="40.0" text="Add" />
+                  <ComboBox fx:id="projectDropDown" layoutY="21.0" prefHeight="25.0" prefWidth="150.0" promptText="View Projects" />
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="274.0" layoutY="68.0">
+               <children>
+                  <Label layoutY="-1.0" text="Life Cycle Steps" />
+                  <TextField fx:id="lifeCycleField" layoutX="3.0" layoutY="49.0" prefHeight="25.0" prefWidth="100.0" />
+                  <Button fx:id="addLifecycleButton" layoutX="110.0" layoutY="49.0" mnemonicParsing="false" onAction="#addLifeCycleStep" prefHeight="17.0" prefWidth="40.0" text="Add" />
+                  <ComboBox fx:id="lifeCycleDropDown" layoutX="1.0" layoutY="20.0" prefWidth="150.0" promptText="View Lifecycle Steps" />
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="276.0" layoutY="162.0">
+               <children>
+                  
+                  <Label text="Effort Categories" />
+                  <TextField fx:id="effortCategoryField" layoutX="3.0" layoutY="46.0" prefHeight="25.0" prefWidth="100.0" />
+                  <Button fx:id="addEffortCategoryButton" layoutX="110.0" layoutY="46.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="40.0" text="Add" />
+                  <ComboBox fx:id="effortCategoryDropDown" layoutX="1.0" layoutY="17.0" prefHeight="25.0" prefWidth="150.0" promptText="View Effort Categories" />
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="117.0" layoutY="162.0">
+               <children>
+                  
+                  <Label layoutX="1.0" text="Plans" />
+                  <TextField fx:id="planField" layoutX="1.0" layoutY="46.0" prefHeight="25.0" prefWidth="107.0" />
+                  <Button fx:id="addPlanButton" layoutX="110.0" layoutY="46.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="40.0" text="Add" />
+                  <ComboBox fx:id="planDropDown" layoutY="17.0" prefHeight="25.0" prefWidth="150.0" promptText="View Plans" />
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="435.0" layoutY="66.0">
+               <children>
+                  
+                  <Label layoutX="1.0" text="Deliverables" />
+                  <TextField fx:id="deliverableField" layoutX="2.0" layoutY="50.0" prefHeight="25.0" prefWidth="100.0" />
+                  <Button fx:id="addDeliverableButton" layoutX="108.0" layoutY="50.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="40.0" text="Add" />
+                  <ComboBox fx:id="deliverablesDropDown" layoutY="21.0" prefHeight="25.0" prefWidth="150.0" promptText="View Deliverables" />
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="437.0" layoutY="160.0">
+               <children>
+                  
+                  <Label text="Interruptions" />
+                  <TextField fx:id="interruptionField" layoutX="1.0" layoutY="46.0" prefHeight="25.0" prefWidth="100.0" />
+                  <Button fx:id="addInterruptionButton" layoutX="104.0" layoutY="46.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="40.0" text="Add" />
+                  <ComboBox fx:id="interruptionsDropDown" layoutY="18.0" prefHeight="25.0" prefWidth="150.0" promptText="View Interruptions" />
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="116.0" layoutY="253.0">
+               <children>
+                  
+                  <Label layoutX="2.0" text="Defect Categories" />
+                  <TextField fx:id="defectCategoryField" layoutX="1.0" layoutY="46.0" prefHeight="25.0" prefWidth="100.0" />
+                  <Button fx:id="addDefectCategoryButton" layoutX="109.0" layoutY="46.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="40.0" text="Add" />
+                  <ComboBox fx:id="defectCategoryDropDown" layoutY="17.0" prefHeight="25.0" prefWidth="150.0" promptText="View Defect Categories" />
+               </children>
+            </AnchorPane>
       
       </children>
     </AnchorPane>
