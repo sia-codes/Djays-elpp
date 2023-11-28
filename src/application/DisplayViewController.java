@@ -47,33 +47,33 @@ public class DisplayViewController extends Controller implements Initializable {
     
 
 
-    private void testAddEffortLogToDatabase() {
-        try {
-            // Hardcoded test data
-            LocalDate date = LocalDate.now();
-            Time startTimeSql = Time.valueOf("08:00:00");
-            Time stopTimeSql = Time.valueOf("10:00:00");
-            Time deltaTimeSql = new Time(stopTimeSql.getTime() - startTimeSql.getTime());
-            int projectId = 1; // Assume project with ID 1 exists
-            int lifecycleStepId = 1; // Assume lifecycle step with ID 1 exists
-            int effortCategoryId = 1; // Assume effort category with ID 1 exists
-            int planId = 1; // Assume plan with ID 1 exists
-
-            // Create EffortLog object
-            EffortLog testLog = new EffortLog(0, Date.valueOf(date), startTimeSql, stopTimeSql, 
-                                              projectId, lifecycleStepId, effortCategoryId, planId);
-
-            // Add the log to the database using EffortLogDAO
-            if (effortLogDAO.addEffortLog(testLog)) {
-                System.out.println("Test log added successfully.");
-            } else {
-                System.out.println("Failed to add test log.");
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
-            System.out.println("Unexpected error: " + e.getMessage());
-        }
-    }
+//    private void testAddEffortLogToDatabase() {
+//        try {
+//            // Hardcoded test data
+//            LocalDate date = LocalDate.now();
+//            Time startTimeSql = Time.valueOf("08:00:00");
+//            Time stopTimeSql = Time.valueOf("10:00:00");
+//            Time deltaTimeSql = new Time(stopTimeSql.getTime() - startTimeSql.getTime());
+//            int projectId = 1; // Assume project with ID 1 exists
+//            int lifecycleStepId = 1; // Assume lifecycle step with ID 1 exists
+//            int effortCategoryId = 1; // Assume effort category with ID 1 exists
+//            int planId = 1; // Assume plan with ID 1 exists
+//
+//            // Create EffortLog object
+//            EffortLog testLog = new EffortLog(0, Date.valueOf(date), startTimeSql, stopTimeSql, 
+//                                              projectId, lifecycleStepId, effortCategoryId, planId);
+//
+//            // Add the log to the database using EffortLogDAO
+//            if (effortLogDAO.addEffortLog(testLog)) {
+//                System.out.println("Test log added successfully.");
+//            } else {
+//                System.out.println("Failed to add test log.");
+//            }
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//            System.out.println("Unexpected error: " + e.getMessage());
+//        }
+//    }
     
     
     
@@ -269,6 +269,8 @@ public class DisplayViewController extends Controller implements Initializable {
         alert.setHeaderText(null);
         alert.showAndWait();
     }
+    
+    
 
     // Implement other methods and functionalities as required
 }

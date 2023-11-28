@@ -458,6 +458,48 @@ public class ProjectDAO {
         }
         return -1; // Again, handle this case as needed
     }
+    
+    public String getLifeCycleStepName(int id) throws SQLException {
+        String sql = "SELECT name FROM lifecycles WHERE id = ?";
+        try (Connection conn = DatabaseConnection.getConnection();
+             PreparedStatement statement = conn.prepareStatement(sql)) {
+            statement.setInt(1, id);
+            ResultSet resultSet = statement.executeQuery();
+            if (resultSet.next()) {
+                return resultSet.getString("name");
+            } else {
+                return null;
+            }
+        }
+    }
+
+    public String getEffortCategoryName(int id) throws SQLException {
+        String sql = "SELECT name FROM effort_categories WHERE id = ?";
+        try (Connection conn = DatabaseConnection.getConnection();
+             PreparedStatement statement = conn.prepareStatement(sql)) {
+            statement.setInt(1, id);
+            ResultSet resultSet = statement.executeQuery();
+            if (resultSet.next()) {
+                return resultSet.getString("name");
+            } else {
+                return null;
+            }
+        }
+    }
+
+    public String getPlanName(int id) throws SQLException {
+        String sql = "SELECT name FROM plans WHERE id = ?";
+        try (Connection conn = DatabaseConnection.getConnection();
+             PreparedStatement statement = conn.prepareStatement(sql)) {
+            statement.setInt(1, id);
+            ResultSet resultSet = statement.executeQuery();
+            if (resultSet.next()) {
+                return resultSet.getString("name");
+            } else {
+                return null;
+            }
+        }
+    }
 
     
 
