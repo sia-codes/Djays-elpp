@@ -43,7 +43,7 @@ public class LoginViewController {
 
         if (Login.authenticate(userName, password)) {
             Main.currentUser = new User(userName, password); // Assuming currentUser is a User object
-            loadNextScene(event, "DefinitionsPage.fxml", "Definitions Page"); // Replace with your next scene's FXML and title
+            loadNextScene(event, "EffortConsolePage.fxml", "Effort Console"); // Replace with your next scene's FXML and title
         } else {
             errorLabel.setText("Incorrect username or password.");
         }

@@ -410,6 +410,54 @@ public class ProjectDAO {
 
         return defectCategories;
     }
+    
+    public int findLifecycleStepIdByName(String name, int projectId) throws SQLException {
+        String query = "SELECT id FROM lifecycles WHERE project_id = ? AND name = ?";
+        try (Connection conn = DatabaseConnection.getConnection();
+             PreparedStatement pstmt = conn.prepareStatement(query)) {
+            pstmt.setInt(1, projectId);
+            pstmt.setString(2, name);
+            ResultSet rs = pstmt.executeQuery();
+            if (rs.next()) {
+                return rs.getInt("id");
+            }
+        }
+        return -1; // Or handle this case appropriately
+    }
+
+    
+    public int findEffortCategoryIdByName(String categoryName, int projectId) throws SQLException {
+        String sql = "SELECT id FROM effort_categories WHERE name = ? AND project_id = ?";
+        try (Connection conn = DatabaseConnection.getConnection();
+             PreparedStatement pstmt = conn.prepareStatement(sql)) {
+
+            pstmt.setString(1, categoryName);
+            pstmt.setInt(2, projectId);
+
+            try (ResultSet rs = pstmt.executeQuery()) {
+                if (rs.next()) {
+                    return rs.getInt("id");
+                } else {
+                    throw new SQLException("No effort category found with the given name and project id.");
+                }
+            }
+        }
+    }
+
+    
+    public int findPlanIdByName(String name, int projectId) throws SQLException {
+        String query = "SELECT id FROM plans WHERE project_id = ? AND name = ?";
+        try (Connection conn = DatabaseConnection.getConnection();
+             PreparedStatement pstmt = conn.prepareStatement(query)) {
+            pstmt.setInt(1, projectId);
+            pstmt.setString(2, name);
+            ResultSet rs = pstmt.executeQuery();
+            if (rs.next()) {
+                return rs.getInt("id");
+            }
+        }
+        return -1; // Again, handle this case as needed
+    }
 
     
 
