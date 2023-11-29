@@ -6,6 +6,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class SessionDAO {
+    private static long currentSessionId;
 
     public Session findSessionByName(String name) {
         String sql = "SELECT * FROM sessions WHERE name = ?";
@@ -18,6 +19,10 @@ public class SessionDAO {
                 Session session = new Session(rs.getString("name"), rs.getString("pin"));
                 session.setId(rs.getString("id"));
                 session.setStatus(rs.getString("status"));
+
+                // Update currentSessionId
+                currentSessionId = Long.parseLong(session.getId());
+
                 return session;
             }
         } catch (SQLException e) {
@@ -36,10 +41,24 @@ public class SessionDAO {
             pstmt.setString(3, "closed");
 
             int affectedRows = pstmt.executeUpdate();
-            return affectedRows > 0;
+            if (affectedRows > 0) {
+                // Update currentSessionId after successful insertion
+                try (ResultSet generatedKeys = pstmt.getGeneratedKeys()) {
+                    if (generatedKeys.next()) {
+                        session.setId(generatedKeys.getString(1));
+                        //Update currentSessionId
+                        currentSessionId = Long.parseLong(session.getId());
+                    }
+                }
+                return true;
+            }
         } catch (SQLException e) {
             e.printStackTrace();
-            return false;
         }
+        return false;
+    }
+    
+    public static long getCurrentSessionId() {
+        return currentSessionId;
     }
 }

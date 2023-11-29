@@ -12,6 +12,7 @@ import java.io.IOException;
 public class LoginViewController {
     private Scene scene;
     private Stage stage;
+    private UserDAO userDAO = new UserDAO();
 
     @FXML
     private TextField usernameField;
@@ -41,9 +42,10 @@ public class LoginViewController {
         String userName = usernameField.getText();
         String password = passwordField.getText();
 
-        if (Login.authenticate(userName, password)) {
-            Main.currentUser = new User(userName, password); // Assuming currentUser is a User object
-            loadNextScene(event, "EffortConsolePage.fxml", "Effort Console"); // Replace with your next scene's FXML and title
+        User user = userDAO.authenticate(userName, password);
+        if (user != null) {
+            Main.currentUser = user; // Assuming Main class has a currentUser static field
+            loadNextScene(event, "EffortConsolePage.fxml", "Effort Console");
         } else {
             errorLabel.setText("Incorrect username or password.");
         }

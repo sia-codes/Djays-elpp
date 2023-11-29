@@ -1,6 +1,7 @@
 package application;
 
-public class User{
+public class User {
+    private String id;
     private String userName;
     private String password;
 
@@ -9,6 +10,16 @@ public class User{
         this.password = password;
     }
 
+    // Getter and setter for id
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    // Existing getters and setters
     public String getUserName() {
         return this.userName;
     }
