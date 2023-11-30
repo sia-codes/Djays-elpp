@@ -5,14 +5,21 @@ import java.net.http.HttpClient;
 import java.net.http.WebSocket;
 import java.util.concurrent.CompletionStage;
 import org.json.JSONObject;  // Import the org.json package
+import javafx.application.Platform;
+
+
 
 public class RealtimeClient {
-
+	
+	private PlanningPokerPageViewController controller;
+	
     private final String webSocketURL = "ws://localhost:8080"; // URL of your Node.js WebSocket server
 
-    public RealtimeClient() {
+    public RealtimeClient(PlanningPokerPageViewController controller) {
+        this.controller = controller;
         startWebSocketClient();
     }
+
 
     private void startWebSocketClient() {
         HttpClient client = HttpClient.newHttpClient();
@@ -22,12 +29,19 @@ public class RealtimeClient {
             @Override
             public CompletionStage<?> onText(WebSocket webSocket, CharSequence data, boolean last) {
                 String message = data.toString();
-                // Process the received message
-                processMessage(message);
+                JSONObject json = new JSONObject(message);
+                if (json.getBoolean("update")) {
+                    Platform.runLater(() -> {
+                        if (controller != null) {
+                            controller.populateUserStories();
+                        }
+                    });
+                }
                 return null;
             }
 
             // Implement other necessary WebSocket listener methods
+            
         });
     }
 

@@ -9,6 +9,7 @@ import javafx.stage.Stage;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 
+
 public class Main extends Application {
     
     public static User currentUser;
@@ -33,12 +34,8 @@ public class Main extends Application {
     }
 
     public static void main(String[] args) {
-
         testDatabaseConnection();
-     // Start the RealtimeClient
-        new RealtimeClient();
-        
-        launch(args);
+        launch(args); // launch should be the last call in main
     }
 
     public static ObservableList<?> getProjects() {
