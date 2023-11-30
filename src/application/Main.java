@@ -33,8 +33,11 @@ public class Main extends Application {
     }
 
     public static void main(String[] args) {
-        // Test the database connection
+
         testDatabaseConnection();
+     // Start the RealtimeClient
+        new RealtimeClient();
+        
         launch(args);
     }
 
