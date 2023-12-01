@@ -13,12 +13,16 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
+import javafx.scene.control.Label;
 
 
 public class PlanningPokerPageViewController extends Controller implements Initializable, RealTimeUpdateListener{
 	
 	@FXML private ComboBox<String> userStoriesDropdown;
 	@FXML private TextField addUserStoryField;
+	@FXML private Label userStoryNameSelectedLabel; // Label to display the selected user story
+
+	
 	
 	private RealtimeClient realtimeClient;
 	

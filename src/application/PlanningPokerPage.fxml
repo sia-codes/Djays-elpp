@@ -83,7 +83,7 @@
             </Label>
             <TextArea layoutX="123.0" layoutY="188.0" prefHeight="108.0" prefWidth="86.0" text="Player 1  ⏳&#10;Player 2  ⏳&#10;Player 3  ⏳" />
             <Button layoutX="112.0" layoutY="312.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="104.0" text="Next User Story" />
-            <Label layoutX="370.0" layoutY="123.0" text="User Story 1" underline="true" />
+            <Label fx:id="userStoryNameSelectedLabel" layoutX="370.0" layoutY="123.0" text="User Story 1" underline="true" />
             <Button layoutX="244.0" layoutY="153.0" mnemonicParsing="false" prefHeight="51.0" prefWidth="51.0" text="0">
                <font>
                   <Font size="17.0" />
@@ -151,7 +151,7 @@
             </Button>
             <TextField fx:id="addUserStoryField" layoutX="123.0" layoutY="62.0" prefHeight="25.0" prefWidth="149.0" />
             <Button fx:id="addUserStoryButton" layoutX="278.0" layoutY="62.0" mnemonicParsing="false" onAction="#onAddUserStoryButtonClicked" text="Add" />
-            <ComboBox fx:id="userStoriesDropdown" layoutX="365.0" layoutY="62.0" prefHeight="25.0" prefWidth="179.0" />
+            <ComboBox fx:id="userStoriesDropdown" layoutX="365.0" layoutY="62.0" prefHeight="25.0" prefWidth="179.0" promptText="Select a User Story" />
             <Label layoutX="366.0" layoutY="39.0" text="User Stories" />
       </children>
     </AnchorPane>

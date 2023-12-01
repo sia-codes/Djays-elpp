@@ -14,6 +14,8 @@ public class RealtimeClient {
 	private PlanningPokerPageViewController controller;
 	
     private final String webSocketURL = "ws://localhost:8080"; // URL of your Node.js WebSocket server
+    
+    
 
     public RealtimeClient(PlanningPokerPageViewController controller) {
         this.controller = controller;
@@ -39,11 +41,14 @@ public class RealtimeClient {
                 }
                 return null;
             }
-
+            
+            
             // Implement other necessary WebSocket listener methods
             
         });
     }
+    
+    
 
     private void processMessage(String message) {
         // Parse the JSON message and print its contents
@@ -54,4 +59,6 @@ public class RealtimeClient {
             System.err.println("Error processing message: " + e.getMessage());
         }
     }
+    
+    
 }
