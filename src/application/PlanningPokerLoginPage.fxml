@@ -4,25 +4,35 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
-<?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.PlanningPokerLoginViewController">
+<AnchorPane fx:id="pageLabel" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.PlanningPokerLoginViewController">
 	<!-- TODO Add Nodes -->
 	<children>
-      <TextField fx:id="sessionNameField" layoutX="211.0" layoutY="153.0" />
-      <Label fx:id="userNameLabel" layoutX="211.0" layoutY="136.0" text="Session Name" />
-      <Label fx:id="passwordLabel" layoutX="213.0" layoutY="187.0" text="Session PIN" />
-      <PasswordField fx:id="passwordField" layoutX="211.0" layoutY="204.0" promptText="00000" />
-      <Button fx:id="submit" layoutX="292.0" layoutY="254.0" mnemonicParsing="false" onAction="#submitLogin" prefHeight="25.0" prefWidth="73.0" text="Join" />
-      <Button fx:id="createSessionButton" layoutX="208.0" layoutY="254.0" mnemonicParsing="false" onAction="#onCreateSessionPressed" prefHeight="25.0" prefWidth="73.0" text="Create" />
-      <Label fx:id="errorLabel" layoutX="200.0" layoutY="320.0" style="-fx-background-color: red;" />
-      <Text layoutX="206.0" layoutY="90.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Planning Poker">
+      <TextField fx:id="sessionNameField" layoutX="198.0" layoutY="182.0" prefHeight="25.0" prefWidth="174.0" />
+      <Label fx:id="userNameLabel" layoutX="198.0" layoutY="165.0" text="Session Name" />
+      <Label fx:id="passwordLabel" layoutX="198.0" layoutY="215.0" text="Session PIN" />
+      <PasswordField fx:id="passwordField" layoutX="198.0" layoutY="233.0" prefHeight="25.0" prefWidth="174.0" />
+      <Button fx:id="submit" layoutX="198.0" layoutY="275.0" mnemonicParsing="false" onAction="#submitLogin" prefHeight="25.0" prefWidth="174.0" style="-fx-background-color: #000;" text="Join" textFill="WHITE" />
+      <Button fx:id="createSessionButton" layoutX="198.0" layoutY="310.0" mnemonicParsing="false" onAction="#onCreateSessionPressed" prefHeight="25.0" prefWidth="174.0" style="-fx-border-color: black; -fx-background-color: transparent;" text="Create" />
+      <Label fx:id="errorLabel" alignment="CENTER" layoutX="290.0" layoutY="120.0" style="-fx-background-color: red;" />
+      <ImageView fitHeight="50.0" fitWidth="100.0" layoutX="235.0" layoutY="49.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../assets/app_logo.png" />
+         </image>
+      </ImageView>
+      <Label fx:id="userNameLabel1" layoutX="191.0" layoutY="122.0" text="Join Planning Poker">
          <font>
-            <Font size="24.0" />
+            <Font name="System Bold" size="20.0" />
          </font>
-      </Text>
-      <Button fx:id="effortConsoleButton" layoutX="19.0" layoutY="15.0" mnemonicParsing="false" onAction="#toEffortConsole" prefHeight="25.0" prefWidth="96.0" text="EffortConsole" />
+      </Label>
+      <Button fx:id="effortConsoleButton" layoutX="28.0" layoutY="51.0" mnemonicParsing="false" onAction="#toEffortConsole" prefHeight="36.0" prefWidth="39.0" style="-fx-background-color: #000;" text="&lt;" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>
