@@ -29,7 +29,7 @@ public class PlanningPokerPageViewController extends Controller implements Initi
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 	    populateUserStories();
-	    realtimeClient = new RealtimeClient(this); // Set the controller instance in RealtimeClient
+	  realtimeClient = new RealtimeClient(this); 
 	  //testAddEffortLogToDatabase();
 	    // other initialization code...
 	}
@@ -49,6 +49,8 @@ public class PlanningPokerPageViewController extends Controller implements Initi
                 break;
         }
     }
+    
+
 	
 	public void populateUserStories() {
 		
@@ -79,6 +81,11 @@ public class PlanningPokerPageViewController extends Controller implements Initi
             // Handle database errors
         }
     }
+	
+	  private void handleVote(double voteValue) {
+	        String selectedStory = userStoriesDropdown.getSelectionModel().getSelectedItem();
+	        realtimeClient.sendVote(selectedStory, voteValue);
+	    }
 
     public void onAddUserStoryButtonClicked() {
         String storyName = addUserStoryField.getText();

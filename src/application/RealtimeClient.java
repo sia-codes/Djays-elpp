@@ -43,8 +43,6 @@ public class RealtimeClient {
             }
             
             
-            // Implement other necessary WebSocket listener methods
-            
         });
     }
     
@@ -59,6 +57,16 @@ public class RealtimeClient {
             System.err.println("Error processing message: " + e.getMessage());
         }
     }
+
+
+	public void sendVote(String selectedStory, double voteValue) {
+        try {
+            JSONObject jsonObject = new JSONObject(selectedStory);
+            System.out.println("Received change: " + jsonObject.toString(4)); // Pretty print JSON
+        } catch (Exception e) {
+            System.err.println("Error processing message: " + e.getMessage());
+        }
+	}
     
     
 }

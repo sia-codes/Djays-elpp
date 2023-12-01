@@ -5,6 +5,7 @@ module FXML_Tutorial {
 	requires java.sql;
 	requires java.net.http;
 	requires org.json;
+	requires javafx.base;
 	
 	opens application to javafx.graphics, javafx.fxml;
 }

@@ -4,51 +4,43 @@ import java.util.ArrayList;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.TextArea;
+import java.sql.*;
+import java.util.ArrayList;
+import java.util.List;
 
-public class ViewLogsController extends Controller{
-	
-	private ArrayList<Project> userProjects;
-	private ArrayList<Log> userLogs;
-	private ArrayList<Defect> userDefects;
-	private StringBuilder fieldContent = new StringBuilder("");
-	@FXML
-	private TextArea viewLogsField;
-	
-	//Displays all of the logs for all of the projects
-	@FXML
-	public void showLogs() {
-		viewLogsField.setText("");
-		fieldContent.setLength(0);
-		userProjects = Main.currentUser.getProjects();
-		for(int i = 0; i < userProjects.size(); i++) {
-			fieldContent.append(userProjects.get(i).getName() + "\n");
-			userLogs = userProjects.get(i).getLogs();
-			if(userLogs.size() == 0) {
-				fieldContent.append("N/A\n");
-			}
-			for(int j = 0; j < userLogs.size(); j++) {
-				fieldContent.append(userLogs.get(j).toString() + "\n");
-			}
-		}
-		viewLogsField.setText(fieldContent.toString());
-	}
-	
-	//Displays all of the defects for all of the projects
-	@FXML
-	public void showDefects() {
-		viewLogsField.setText("");
-		fieldContent.setLength(0);
-		userProjects = Main.currentUser.getProjects();
-		for(int i = 0; i < userProjects.size(); i++) {
-			fieldContent.append(userProjects.get(i).getName() + "\n");
-			userDefects = userProjects.get(i).getDefects();
-			if(userDefects.size() == 0) {
-				fieldContent.append("N/A\n");
-			}
-			for(int j = 0; j < userDefects.size(); j++) {
-				fieldContent.append(userDefects.get(j).toString() + "\n");
-			}
-		}
-		viewLogsField.setText(fieldContent.toString());
-	}
+public class ViewLogsController  extends Controller{
+    // ... Other code ...
+
+    // Method to retrieve defect logs for a project by project ID
+    private List<String> getDefectLogsForProject(int projectId, Connection conn) throws SQLException {
+        List<String> defectLogs = new ArrayList<>();
+        String query = "SELECT description FROM defect_logs WHERE project_id = ?";
+        
+        try (PreparedStatement pstmt = conn.prepareStatement(query)) {
+            pstmt.setInt(1, projectId);
+            ResultSet rs = pstmt.executeQuery();
+
+            while (rs.next()) {
+                defectLogs.add(rs.getString("description"));
+            }
+        }
+        return defectLogs;
+    }
+
+    // Method to retrieve effort logs for a project by project ID
+    private List<String> getEffortLogsForProject(int projectId, Connection conn) throws SQLException {
+        List<String> effortLogs = new ArrayList<>();
+        String query = "SELECT description FROM effort_logs WHERE project_id = ?";
+        
+        try (PreparedStatement pstmt = conn.prepareStatement(query)) {
+            pstmt.setInt(1, projectId);
+            ResultSet rs = pstmt.executeQuery();
+
+            while (rs.next()) {
+                effortLogs.add(rs.getString("description"));
+            }
+        }
+        return effortLogs;
+    }
+
 }
