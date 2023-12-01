@@ -1,81 +1,105 @@
 package application;
 
-import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Project implements Serializable{
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
-	private String projectName;
-	private ArrayList<Log> logs;
-	private ArrayList<Defect> defects;
-	
-	public Project(String projectName) {
-		this.projectName = projectName;
-		this.logs = new ArrayList<Log>();
-		this.defects = new ArrayList<Defect>();
-	}
-	
-	public String getName() {
-		return this.projectName;
-	}
-	
-	public ArrayList<Log> getLogs() {
-		return this.logs;
-	}
-	
-	public ArrayList<Defect> getDefects(){
-		return this.defects;
-	}
-	
-	public Defect findDefect(String defectName) {
-		for(int i = 0; i < this.defects.size(); i++) {
-			if(this.defects.get(i).getDefectName().equals(defectName)) {
-				return this.defects.get(i);
-			}
-		}
-		return null;
-	}
-	
-	public int getDefectIndex(Defect defect) {
-		for(int i = 0; i < this.defects.size(); i++) {
-			if(defect == this.defects.get(i)) {
-				return i;
-			}
-		}
-		return -1;
-	}
-	
-	public void addLog(Log log) {
-		this.logs.add(log);
-	}
-	
-	public void addDefect(Defect defect) {
-		this.defects.add(defect);
-	}
-	
-	public boolean isDefect(String defectName) {
-		for(int i = 0; i < this.defects.size();i++) {
-			if(this.defects.get(i).getDefectName().equals(defectName)) {
-				return true;
-			}
-		}
-		return false;
-	}
-	
-	public void removeDefect(Defect defect) {
-		int index = getDefectIndex(defect);
-		this.defects.remove(index);
-	}
-	
-	public List<String> getDefectNames(){
-		List<String> names = new ArrayList<String>();
-		for(int i =0; i< this.defects.size();i++) {
-			names.add(this.defects.get(i).getDefectName());
-		}
-		return names;
-	}
+public class Project {
+    private int id;
+    private String name;
+    private List<String> lifecycles;
+    private List<String> deliverables;
+    private List<String> plans;
+    private List<String> effortCategories;
+    private List<String> interruptions;
+    private List<String> defectCategories;
+    private List<String> userStories;
+
+    // Constructor
+    public Project(int id, String name) {
+        this.id = id;
+        this.name = name;
+        this.lifecycles = new ArrayList<>();
+        this.deliverables = new ArrayList<>();
+        this.plans = new ArrayList<>();
+        this.effortCategories = new ArrayList<>();
+        this.interruptions = new ArrayList<>();
+        this.defectCategories = new ArrayList<>();
+        this.userStories = new ArrayList<>();
+    }
+
+    // Getters and setters for all fields
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public List<String> getLifecycles() {
+        return lifecycles;
+    }
+
+    public void setLifecycles(List<String> lifecycles) {
+        this.lifecycles = lifecycles;
+    }
+
+    public List<String> getDeliverables() {
+        return deliverables;
+    }
+
+    public void setDeliverables(List<String> deliverables) {
+        this.deliverables = deliverables;
+    }
+
+    public List<String> getPlans() {
+        return plans;
+    }
+
+    public void setPlans(List<String> plans) {
+        this.plans = plans;
+    }
+
+    public List<String> getEffortCategories() {
+        return effortCategories;
+    }
+
+    public void setEffortCategories(List<String> effortCategories) {
+        this.effortCategories = effortCategories;
+    }
+
+    public List<String> getInterruptions() {
+        return interruptions;
+    }
+
+    public void setInterruptions(List<String> interruptions) {
+        this.interruptions = interruptions;
+    }
+
+    public List<String> getDefectCategories() {
+        return defectCategories;
+    }
+
+    public void setDefectCategories(List<String> defectCategories) {
+        this.defectCategories = defectCategories;
+    }
+
+    public List<String> getUserStories() {
+        return userStories;
+    }
+
+    public void setUserStories(List<String> userStories) {
+        this.userStories = userStories;
+    }
+
+    // Additional methods as needed
+    // Here you can add any other functionality required by your application
 }

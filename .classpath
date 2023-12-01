@@ -6,7 +6,13 @@
 			<attribute name="module" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/JavaFX20">
+	<classpathentry kind="lib" path="C:/Development/Academic/CSE360/ASUWorkspace/Djays-elpp/lib/postgresql-42.7.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/jlobo/Downloads/json-20231013.jar">
+		<attributes>
+			<attribute name="module" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/JavaFX21">
 		<attributes>
 			<attribute name="module" value="true"/>
 		</attributes>
